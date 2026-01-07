@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-block-size: 100vh;
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+}
+
+@theme {
+    --color-blue-950: hsl(233, 39%, 13%);
+    --color-blue-900: hsl(234, 39%, 14%);
+    --color-blue-850: hsl(235, 35%, 18%);
+    --color-blue-100: hsl(227, 100%, 92%);
+    --color-blue-50: hsl(229, 52%, 96%);
+    --color-grey-400: hsl(233, 13%, 76%);
+    --color-grey-200: hsl(0, 3%, 89%);
+    --color-cyan-300: hsl(182, 91%, 71%);
+    --color-red-400: hsl(0, 91%, 71%);
+    --color-purple-400: hsl(284, 89%, 74%);
+    --color-gradient-1: hsl(235, 32%, 27%);
+    --color-gradient-2: hsl(234, 50%, 11%);
+
+    --text-mobile-1: 5rem;
+    --text-mobile-2: .875rem;
+    --text-mobile-3: .75rem;
+
+    --text-desk-1: 6.25rem;
+    --text-desk-2: 1rem;
+    --text-desk-3: .875rem;
+    --text-title: 1.5rem;
+    --text-setting-1: 1.75rem;
+    --text-setting-2: 1rem;
+    --text-setting-3: .813rem;
+    --text-setting-4: .75rem;
+    --text-time: clamp(5rem, 3.8042rem + 5.102vw, 6.25rem);
+
+    --spacing-clampClock: clamp(18.75rem, 12.1899rem + 27.9898vw, 25.625rem);
+    --spacing-clampClock-i: clamp(16.7375rem, 10.8662rem + 25.051vw, 22.875rem);
+    --spacing-mobile-w: 18.75rem;
+    --spacing-105: 6.563rem;
+
+}
+
+
+.wrapper__clock {
+    /* -webkit-box-shadow: 12px 13px 15px 5px hsl(233, 39%, 13%, 0.72), -17px -17px 20px -2px rgba(255, 255, 255, 0.1); */
+    box-shadow: 12px 13px 22px 6px hsl(233, 39%, 13%, 0.72), -5px -5px 30px .5px rgba(255, 255, 255, 0.05);
+}
