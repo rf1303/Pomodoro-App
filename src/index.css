@@ -39,7 +39,8 @@ body {
     --text-setting-2: 1rem;
     --text-setting-3: .813rem;
     --text-setting-4: .75rem;
-    --text-time: clamp(5rem, 3.8042rem + 5.102vw, 6.25rem);
+    --text-time-1: clamp(5rem, 3.8042rem + 5.102vw, 6.25rem);
+    --text-time-2: clamp(5rem, 3.2063rem + 7.6531vw, 6.875rem);
 
     --spacing-clampClock: clamp(18.75rem, 12.1899rem + 27.9898vw, 25.625rem);
     --spacing-clampClock-i: clamp(16.7375rem, 10.8662rem + 25.051vw, 22.875rem);
