@@ -10,6 +10,7 @@ export const SetOptions = ({ children }) => {
     const [mode, setMode] = useState('pomodoro');
     const [clockStart, setClockStart] = useState(true);
     const [timeLeft, setTimeLeft] = useState(25 * 60);
+    const [isRunning, setIsRunning] = useState(false);
     const [duration, setDuration] = useState({
         pomodoro: 25,
         shortBreak: 5,
@@ -31,6 +32,7 @@ export const SetOptions = ({ children }) => {
             isSettingOption, setIsSettingOption,
             clockStart, setClockStart,
             timeLeft, setTimeLeft,
+            isRunning, setIsRunning,
             PomodoroOptions
         }}>
             {children}</SettingsPomodoro.Provider>

@@ -1,16 +1,17 @@
-
-import { useState } from 'react'
-import {useSettingsPerfil, SetOptions} from './SetOptions.jsx'
+import { useEffect } from "react";
+import { useSettingsPerfil } from './SetOptions.jsx'
 
 
 function HeaderOptions() {
-    const {mode, setMode, color, PomodoroOptions, setClockStart} = useSettingsPerfil();
+    const {mode, setMode, color, PomodoroOptions, setClockStart, setIsRunning, setTimeLeft, duration} = useSettingsPerfil();
     
     const handleModeBtn = (option) => {
         setClockStart(true);
         setMode(option);
+        setTimeLeft(duration[option] * 60)
+        setIsRunning(false); 
+        
     }
-
     return (
         <div className="wrapper__head grid items-center justify-items-center gap-10">
             <h1 className="text-3xl font-bold text-center text-blue-100 md:text-4xl">pomodoro</h1>
@@ -26,6 +27,7 @@ function HeaderOptions() {
             </div>
         </div>
     )
+
 }
 export default HeaderOptions; 
 
