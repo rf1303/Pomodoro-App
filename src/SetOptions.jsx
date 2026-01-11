@@ -5,16 +5,25 @@ const SettingsPomodoro = createContext();
 
 export const SetOptions = ({ children }) => {
     const [isSettingOption, setIsSettingOption] = useState(false);
-    const [color, setColor] = useState('red');
+    const [color, setColor] = useState('cyan');
     const [mode, setMode] = useState('pomodoro');
     const [clockStart, setClockStart] = useState(true);
     const [timeLeft, setTimeLeft] = useState(25 * 60);
     const [isRunning, setIsRunning] = useState(false);
     const [activeFont, setActiveFont] = useState('robotoSlab');
     const colorNames = {
-       cyan: 'cyan-300',
-       red: 'red-400',
-       purple: 'purple-400',
+       cyan: {
+            text: 'text-cyan-300',
+            bg: 'bg-cyan-300',
+        },
+       red: {
+            text: 'text-red-400',
+            bg: 'bg-red-400',
+        },
+       purple: {
+            text: 'text-purple-400',
+            bg: 'bg-purple-400',
+        }
     } 
     const font = {
         robotoSlab: 'font-robotoSlab',

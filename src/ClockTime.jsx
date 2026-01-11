@@ -7,7 +7,7 @@ import { useSettingsPerfil } from './SetOptions.jsx';
 
 
 function ClockTime() {
-    const { mode, duration, isSettingOption, setIsSettingOption, clockStart, setClockStart, timeLeft, setTimeLeft, isRunning, setIsRunning } = useSettingsPerfil();
+    const { mode, duration, isSettingOption, setIsSettingOption, clockStart, setClockStart, timeLeft, setTimeLeft, isRunning, setIsRunning, color, colorNames, font, activeFont } = useSettingsPerfil();
 
     const intervalRef = useRef(null);
 
@@ -50,15 +50,14 @@ function ClockTime() {
     const strokeDashoffset = circumference - (progress / 100) * circumference;
 
     return (
-        <div className="wrapper__clock w-clampClock h-clampClock grid items-center justify-items-center gap-20 rounded-full  bg-[linear-gradient(115deg,#14172e_20%,#161932_35%,#292c52_63%)] p-4 ">
+        <div className={`wrapper__clock w-clampClock h-clampClock grid items-center justify-items-center gap-20 rounded-full  bg-[linear-gradient(115deg,#14172e_20%,#161932_35%,#292c52_63%)] p-4 ${font[activeFont]}`}>
             <div className="relative w-clampClock-i h-clampClock-i bg-blue-950 rounded-full  flex  items-center justify-center ">
-                <svg  viewBox="0 0 260 260" className="w-clampClock-i h-clampClock-i transform -rotate-90">
+                <svg  viewBox="0 0 260 260" className={`w-clampClock-i h-clampClock-i transform -rotate-90 ${colorNames[color].text}`}>
                     <circle
                         cx="130"
                         cy="130"
                         r="115"
                         stroke="hsl(227, 100%, 92%, 0.05)"
-                        /* stroke="rgba(255, 255, 255, 0.1)" */
                         strokeWidth="10"
                         fill="none"
                     />
@@ -66,7 +65,7 @@ function ClockTime() {
                         cx="130"
                         cy="130"
                         r="115"
-                        stroke="hsl(182, 91%, 71%)"
+                        stroke="currentColor"
                         strokeWidth="10"
                         fill="none"
                         strokeDasharray={circumference}
