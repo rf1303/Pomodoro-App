@@ -66,6 +66,7 @@
     --text-setting-2: 1rem;
     --text-setting-3: .813rem;
     --text-setting-4: .75rem;
+    --text-setting-5: .688rem;
     --text-time-1: clamp(5rem, 3.8042rem + 5.102vw, 6.25rem);
     --text-time-2: clamp(5rem, 3.2063rem + 7.6531vw, 6.875rem);
 
@@ -92,6 +93,9 @@ body {
     justify-items: center;
 }
 
+.settings__title {
+    @apply text-blue-850 text-setting-5 text-center uppercase tracking-[4.23px] mb-4 md:tracking-[5px] md:text-setting-3;
+}
 
 .wrapper__clock {
     /* -webkit-box-shadow: 12px 13px 15px 5px hsl(233, 39%, 13%, 0.72), -17px -17px 20px -2px rgba(255, 255, 255, 0.1); */

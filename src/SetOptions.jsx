@@ -5,12 +5,22 @@ const SettingsPomodoro = createContext();
 
 export const SetOptions = ({ children }) => {
     const [isSettingOption, setIsSettingOption] = useState(false);
-    const [font, setFont] = useState('robotoSlab');
-    const [color, setColor] = useState('cyan400');
+    const [color, setColor] = useState('red');
     const [mode, setMode] = useState('pomodoro');
     const [clockStart, setClockStart] = useState(true);
     const [timeLeft, setTimeLeft] = useState(25 * 60);
     const [isRunning, setIsRunning] = useState(false);
+    const [activeFont, setActiveFont] = useState('robotoSlab');
+    const colorNames = {
+       cyan: 'cyan-300',
+       red: 'red-400',
+       purple: 'purple-400',
+    } 
+    const font = {
+        robotoSlab: 'font-robotoSlab',
+        kumbhSans: 'font-kumbhSans',
+        spaceMono: 'font-spaceMono',
+    };
     const [duration, setDuration] = useState({
         pomodoro: 25,
         shortBreak: 5,
@@ -22,10 +32,9 @@ export const SetOptions = ({ children }) => {
         longBreak: 'long break'
     }
 
-
     return (
         <SettingsPomodoro.Provider value={{
-            font, setFont,
+            font, colorNames,
             color, setColor,
             mode, setMode,
             duration, setDuration,
@@ -33,6 +42,7 @@ export const SetOptions = ({ children }) => {
             clockStart, setClockStart,
             timeLeft, setTimeLeft,
             isRunning, setIsRunning,
+            activeFont, setActiveFont,
             PomodoroOptions
         }}>
             {children}</SettingsPomodoro.Provider>
