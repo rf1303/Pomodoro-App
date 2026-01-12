@@ -56,13 +56,13 @@ function ClockTime() {
                     <circle cx="130" cy="130" r="115" stroke="hsl(227, 100%, 92%, 0.05)" strokeWidth="10" fill="none" />
                     <circle cx="130" cy="130" r="115" stroke="currentColor" strokeWidth="10" fill="none" strokeDasharray={circumference} strokeDashoffset={strokeDashoffset} strokeLinecap="round" className="transition-all duration-1000 ease-linear"/></svg>
 
-                <div className="absolute inset-x-[11%] inset-y-[23%] text-time-2 font-medium text-white  ">
+                <div className="absolute inset-0 text-time-1  text-white tracking-[-10px] flex items-center justify-center ">
                     {formatTime(timeLeft)}
                 </div>
 
                 <button
                     onClick={handleToggleTimer}
-                    className="absolute inset-x-[26%] inset-y-[65%] text-blue-100 font-semibold text-base uppercase tracking-[0.775rem] text-center hover:scale-105"
+                    className="absolute inset-y-[74%] text-blue-100 font-semibold text-base uppercase tracking-[0.775rem] flex items-end justify-center  hover:scale-115"
                 >
                     {clockStart ? 'start' : isRunning ? 'pause' : 'restart'}
                 </button>

@@ -13,11 +13,12 @@ export const IconCheck = () => (
 function SettingsOptions({ onClose }) {
     const { color, timeLeft, setTimeLeft, font, setColor, mode, setMode, duration, setDuration, PomodoroOptions, setIsSettingOption, isSettingOption, activeFont, setActiveFont, colorNames } = useSettingsPerfil();
 
+    useEffect(() => {
+        setTimeLeft(duration[mode] * 60);
+    }, [duration, mode])
+
     const handleInputArrows = (option, value) => {
-        console.log('option, value:', option, value);
         setDuration(prev => ({ ...prev, [option]: value }))
-        setTimeLeft(duration[option] * 60);
-        console.log('duration[option]:', duration[option])
     }
 
     const handleSubmit = (e) => {
