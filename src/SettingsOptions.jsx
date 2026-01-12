@@ -1,21 +1,30 @@
 import { useState, useEffect } from 'react';
 /* import iconSetting from '../assets/images/icon-settings.svg'; */
+import { InputArrows } from './InputArrows.jsx'
 import { useSettingsPerfil, SetOptions } from './SetOptions.jsx'
 
-const IconClose = () => (<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#1E213F" fillRule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" /></svg>);
+export const IconClose = () => (<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#1E213F" fillRule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" /></svg>);
 
-const IconCheck = () => (
+export const IconCheck = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" aria-hidden="true" ><path d="M1 6l4 4L15 1" fill="none" stroke="#1E213F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /> </svg>
 );
 
 
 function SettingsOptions({ onClose }) {
-    const { color, timeLeft, setTimeLeft, font, setColor, mode, setMode, duration, setDuration, PomodoroOptions, setIsSettingOption, activeFont, setActiveFont, colorNames } = useSettingsPerfil();
+    const { color, timeLeft, setTimeLeft, font, setColor, mode, setMode, duration, setDuration, PomodoroOptions, setIsSettingOption, isSettingOption, activeFont, setActiveFont, colorNames } = useSettingsPerfil();
+
+    const handleInputArrows = (option, value) => {
+        console.log('option, value:', option, value);
+        setDuration(prev => ({ ...prev, [option]: value }))
+        setTimeLeft(duration[option] * 60);
+        console.log('duration[option]:', duration[option])
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setIsSettingOption(false);
+        console.log('isSettingOption:', isSettingOption)
     }
-    console.log('font[activeFont]:', font[activeFont])
     return (
         <div className={`absolute inset-0 bg-blue-850 w-full h-full ${font[activeFont]}`}>
             <div className="absolute inset-0 m-auto w-clampSetting h-setting-mobile rounded-2xl bg-white  py-4.5 md:py-8 md:h-setting-tablet z-50">
@@ -30,12 +39,14 @@ function SettingsOptions({ onClose }) {
                         <div className="w-full flex flex-col items-center justify-center gap-2 md:flex-row">
                             {Object.keys(PomodoroOptions).map((option) => (
                                 <div key={option} className="w-full flex items-center justify-between md:flex-col md:items-start">
+
                                     <label htmlFor={option} className='text-setting-4 text-blue-850 '>{PomodoroOptions[option]}</label>
-                                    <input className='w-35 h-10 bg-blue-50 rounded-xl' type="number" id={option} name={option}
-                                        onChange={(e) => {
-                                            // Handle the change here
-                                            console.log(e.target.value);
-                                        }} value="" />
+                                    <InputArrows
+                                        value={duration[option]}
+                                        onChange={(value) => handleInputArrows(option, value) }
+                                        name={option}
+                                        id={option}
+                                    />
                                 </div>
                             ))}
                         </div>

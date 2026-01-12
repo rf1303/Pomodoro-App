@@ -53,27 +53,8 @@ function ClockTime() {
         <div className={`wrapper__clock w-clampClock h-clampClock grid items-center justify-items-center gap-20 rounded-full  bg-[linear-gradient(115deg,#14172e_20%,#161932_35%,#292c52_63%)] p-4 ${font[activeFont]}`}>
             <div className="relative w-clampClock-i h-clampClock-i bg-blue-950 rounded-full  flex  items-center justify-center ">
                 <svg  viewBox="0 0 260 260" className={`w-clampClock-i h-clampClock-i transform -rotate-90 ${colorNames[color].text}`}>
-                    <circle
-                        cx="130"
-                        cy="130"
-                        r="115"
-                        stroke="hsl(227, 100%, 92%, 0.05)"
-                        strokeWidth="10"
-                        fill="none"
-                    />
-                    <circle
-                        cx="130"
-                        cy="130"
-                        r="115"
-                        stroke="currentColor"
-                        strokeWidth="10"
-                        fill="none"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={strokeDashoffset}
-                        strokeLinecap="round"
-                        className="transition-all duration-1000 ease-linear"
-                    />
-                </svg>
+                    <circle cx="130" cy="130" r="115" stroke="hsl(227, 100%, 92%, 0.05)" strokeWidth="10" fill="none" />
+                    <circle cx="130" cy="130" r="115" stroke="currentColor" strokeWidth="10" fill="none" strokeDasharray={circumference} strokeDashoffset={strokeDashoffset} strokeLinecap="round" className="transition-all duration-1000 ease-linear"/></svg>
 
                 <div className="absolute inset-x-[11%] inset-y-[23%] text-time-2 font-medium text-white  ">
                     {formatTime(timeLeft)}
