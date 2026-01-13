@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
-/* import iconSetting from '../assets/images/icon-settings.svg'; */
+import { useEffect } from 'react';
 import { InputArrows } from './InputArrows.jsx'
-import { useSettingsPerfil, SetOptions } from './SetOptions.jsx'
+import { useSettingsPerfil } from './SetOptions.jsx'
 
 export const IconClose = () => (<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path fill="#1E213F" fillRule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z" /></svg>);
 
@@ -11,7 +10,7 @@ export const IconCheck = () => (
 
 
 function SettingsOptions({ onClose }) {
-    const { color, timeLeft, setTimeLeft, font, setColor, mode, setMode, duration, setDuration, PomodoroOptions, setIsSettingOption, isSettingOption, activeFont, setActiveFont, colorNames } = useSettingsPerfil();
+    const { color, setTimeLeft, font, setColor, mode,  duration, setDuration, PomodoroOptions, setIsSettingOption, activeFont, setActiveFont, colorNames } = useSettingsPerfil();
 
     useEffect(() => {
         setTimeLeft(duration[mode] * 60);
@@ -24,7 +23,6 @@ function SettingsOptions({ onClose }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         setIsSettingOption(false);
-        console.log('isSettingOption:', isSettingOption)
     }
     return (
         <div className={`absolute inset-0 bg-blue-850 w-full h-full ${font[activeFont]}`}>

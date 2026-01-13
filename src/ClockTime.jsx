@@ -48,7 +48,6 @@ function ClockTime() {
     const progress = ( timeLeft / ( duration[mode] * 60 ))  * 100;
     const circumference = 2 * Math.PI * 115;
     const strokeDashoffset = circumference - (progress / 100) * circumference;
-    console.log('colorNames[color]:', colorNames[color])
     return (
         <div className={`wrapper__clock w-clampClock h-clampClock grid items-center justify-items-center gap-20 rounded-full  bg-[linear-gradient(115deg,#14172e_20%,#161932_35%,#292c52_63%)] p-4 ${font[activeFont]}`}>
             <div className="relative w-clampClock-i h-clampClock-i bg-blue-950 rounded-full  flex  items-center justify-center ">
