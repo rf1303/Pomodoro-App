@@ -48,7 +48,7 @@ function ClockTime() {
     const progress = ( timeLeft / ( duration[mode] * 60 ))  * 100;
     const circumference = 2 * Math.PI * 115;
     const strokeDashoffset = circumference - (progress / 100) * circumference;
-
+    console.log('colorNames[color]:', colorNames[color])
     return (
         <div className={`wrapper__clock w-clampClock h-clampClock grid items-center justify-items-center gap-20 rounded-full  bg-[linear-gradient(115deg,#14172e_20%,#161932_35%,#292c52_63%)] p-4 ${font[activeFont]}`}>
             <div className="relative w-clampClock-i h-clampClock-i bg-blue-950 rounded-full  flex  items-center justify-center ">
@@ -56,18 +56,16 @@ function ClockTime() {
                     <circle cx="130" cy="130" r="115" stroke="hsl(227, 100%, 92%, 0.05)" strokeWidth="10" fill="none" />
                     <circle cx="130" cy="130" r="115" stroke="currentColor" strokeWidth="10" fill="none" strokeDasharray={circumference} strokeDashoffset={strokeDashoffset} strokeLinecap="round" className="transition-all duration-1000 ease-linear"/></svg>
 
-                <div className="absolute inset-0 text-time-1  text-white tracking-[-10px] flex items-center justify-center ">
+                <div className={`absolute inset-0 text-time-1  text-white flex items-center justify-center ${activeFont === 'spaceMono' ?  'tracking-[-8px]' : 'tracking-[-1px]'}`}>
                     {formatTime(timeLeft)}
                 </div>
 
                 <button
                     onClick={handleToggleTimer}
-                    className="absolute inset-y-[74%] text-blue-100 font-semibold text-base uppercase tracking-[0.775rem] flex items-end justify-center  hover:scale-115"
-                >
-                    {clockStart ? 'start' : isRunning ? 'pause' : 'restart'}
-                </button>
+                    className={`absolute inset-y-[74%] text-blue-100  text-base uppercase tracking-[0.938rem] font-bold text-center flex items-end justify-center  hover:scale-110 ${colorNames[color].hover} cursor-pointer`}
+                >{clockStart ? 'start' : isRunning ? 'pause' : 'restart'}</button>
             </div>
-            <div className="">
+            <div>
                 <button type="button" className='' onClick={handleSettingOptions}><img src={iconSetting} alt="icon of Setting" className="w-7 h-7" /></button>
                 {isSettingOption && <SettingsOptions onClose={() => setIsSettingOption(false)} />}
             </div>

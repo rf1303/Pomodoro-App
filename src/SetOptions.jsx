@@ -15,14 +15,17 @@ export const SetOptions = ({ children }) => {
        cyan: {
             text: 'text-cyan-300',
             bg: 'bg-cyan-300',
+            hover: 'hover:text-cyan-300',
         },
        red: {
             text: 'text-red-400',
             bg: 'bg-red-400',
+            hover: 'hover:text-red-400',
         },
        purple: {
             text: 'text-purple-400',
             bg: 'bg-purple-400',
+            hover: 'hover:text-purple-400',
         }
     } 
     const font = {

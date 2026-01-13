@@ -18,7 +18,7 @@ function HeaderOptions() {
             <div className="wrapper__options flex items-center justify-center gap-0.5 p-3 bg-blue-900 rounded-full">
                 {Object.keys(PomodoroOptions).map((option) => (
                     <button key={option} onClick={() => handleModeBtn(option)}
-                        className={`w-105 h-12 rounded-3xl px-2 ${mode === option ? `${colorNames[color].bg}`
+                        className={`w-105 h-12 rounded-3xl px-2 cursor-pointer ${mode === option ? `${colorNames[color].bg}`
                             : 'text-grey-400 bg-blue-900 hover:bg-blue-850 '
                             }`}>
                         {PomodoroOptions[option]}

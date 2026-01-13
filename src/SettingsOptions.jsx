@@ -78,7 +78,7 @@ function SettingsOptions({ onClose }) {
                             ))}
                         </div>
                     </div>
-                    <button type="submit" className='absolute inset-y-[95%] left-1/2 -translate-x-1/2  w-36 h-14 bg-red-400 rounded-4xl text-white text-base text-shadow-black '>Apply</button>
+                    <button type="submit" className='absolute inset-y-[95%] left-1/2 -translate-x-1/2  w-36 h-14 bg-red-400 rounded-4xl text-white text-xl text-shadow-black '>Apply</button>
                 </form>
             </div>
         </div>
