@@ -87,10 +87,10 @@
 body {
     margin: 0;
     min-block-size: 100vh;
-    display: grid;
-    gap: 3rem;
-    align-items: center;
-    justify-items: center;
+    /* display: grid; */
+    /* gap: 3rem; */
+    /* align-items: center; */
+    /* justify-items: center; */
     @apply  bg-linear-to-br from-blue-900 from-10%  to-blue-850 to-50% 
 }
 
