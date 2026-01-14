@@ -13,12 +13,12 @@ export const InputArrows = ({ value, onChange, min = 1, max = 60, name }) => {
     const arrowDown = () => value > min && onChange(value - 1);
     return (
         <div className="flex items-center justify-between w-35 h-10 bg-blue-50 rounded-xl px-3">
-            <input className="w-12 bg-transparent text-blue-950" type="number" name={name} value={value} readOnly aria-label={name} onChange={(e) => onChange(Number(e.target.value))} />
+            <input className="w-12 bg-transparent text-blue-950 cursor-pointer" type="number" name={name} value={value} readOnly aria-label={name} onChange={(e) => onChange(Number(e.target.value))} />
             <div className="flex flex-col items-center justify-center">
-                <button type="button" onClick={arrowUp} aria-label="increment 1 minute" className="w-4.5 h-3 flex items-center justify-center">
+                <button type="button" onClick={arrowUp} aria-label="increment 1 minute" className="w-4.5 h-3 flex items-center justify-center cursor-pointer">
                     <IconArrowUp />
                 </button>
-                <button type="button" onClick={arrowDown} aria-label="decrement 1 minute" className="w-4.5 h-3 flex items-center justify-center">
+                <button type="button" onClick={arrowDown} aria-label="decrement 1 minute" className="w-4.5 h-3 flex items-center justify-center cursor-pointer">
                     <IconArrowDown />
                 </button>
             </div>

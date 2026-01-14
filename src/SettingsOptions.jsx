@@ -29,7 +29,7 @@ function SettingsOptions({ onClose }) {
             <div className="absolute inset-0 m-auto w-clampSetting h-setting-mobile rounded-2xl bg-white  py-4.5 md:py-8 md:h-setting-tablet z-50">
                 <header className='flex items-center justify-between  px-6  md:px-9'>
                     <h2 className='text-setting-1'>Settings</h2>
-                    <button type="button" onClick={onClose}>{<IconClose />}</button>
+                    <button type="button" onClick={onClose} className='cursor-pointer'>{<IconClose />}</button>
                 </header>
                 <div className="w-full h-0.5 bg-grey-400 my-4"></div>
                 <form className='grid items-center justify-items-center gap-6 px-6  md:px-9' onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ function SettingsOptions({ onClose }) {
                         <h3 className="settings__title">font</h3>
                         <div className="flex items-center justify-center gap-4">
                             {Object.keys(font).map((ft) => (
-                                <button key={ft} type="button" className={`w-10 h-10 rounded-full
+                                <button key={ft} type="button" className={`w-10 h-10 rounded-full cursor-pointer
                                 ${font[ft]} ${activeFont === ft
                                         ? 'bg-blue-950 text-white'
                                         : 'bg-blue-50 text-blue-950 hover:bg-grey-400 '}`}
@@ -68,7 +68,7 @@ function SettingsOptions({ onClose }) {
                         <h3 className="settings__title">color</h3>
                         <div className="flex items-center justify-center gap-4">
                             {Object.keys(colorNames).map((clr) => (
-                                <button key={clr} type="button" className={`w-10 h-10 rounded-full
+                                <button key={clr} type="button" className={`w-10 h-10 rounded-full cursor-pointer
                                ${colorNames[clr].bg} flex items-center justify-center `}
                                     onClick={() => setColor(clr)}>{color === clr
                                         ? <IconCheck />
@@ -76,7 +76,7 @@ function SettingsOptions({ onClose }) {
                             ))}
                         </div>
                     </div>
-                    <button type="submit" className='absolute inset-y-[95%] left-1/2 -translate-x-1/2  w-36 h-14 bg-red-400 rounded-4xl text-white text-xl text-shadow-black '>Apply</button>
+                    <button type="submit" className='absolute inset-y-[95%] left-1/2 -translate-x-1/2  w-36 h-14 bg-red-400 rounded-4xl text-white text-xl text-shadow-black cursor-pointer'>Apply</button>
                 </form>
             </div>
         </div>
