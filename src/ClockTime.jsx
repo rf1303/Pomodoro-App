@@ -62,7 +62,7 @@ function ClockTime() {
 
                     <button
                         onClick={handleToggleTimer}
-                        className={`absolute inset-y-[74%] text-blue-100  text-base uppercase tracking-[0.938rem] font-bold text-center flex items-end justify-center  hover:scale-110 ${colorNames[color].hover} cursor-pointer`}
+                        className={`absolute inset-y-[74%] text-blue-100 text-mobile-2 uppercase tracking-[0.938rem] font-bold text-center flex items-end justify-center  md:text-base hover:scale-110 ${colorNames[color].hover} cursor-pointer`}
                     >{clockStart ? 'start' : isRunning ? 'pause' : 'restart'}</button>
                 </div>
             </div>
