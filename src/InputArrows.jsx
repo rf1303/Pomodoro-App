@@ -13,7 +13,10 @@ export const InputArrows = ({ value, onChange, min = 1, max = 60, name }) => {
     const arrowDown = () => value > min && onChange(value - 1);
     return (
         <div className="flex items-center justify-between w-35 h-10 bg-blue-50 rounded-xl px-3">
-            <input className="w-12 bg-transparent text-blue-950 cursor-pointer" type="text" name={name} value={value} readOnly aria-label={name} role="spinbutton" />
+            <input className="w-12 bg-transparent text-blue-950 cursor-pointer" type="text" name={name} aria-label={name}
+                role="spinbutton" aria-valuenow={value}
+                aria-valuemin={min} aria-valuemax={max}
+                readOnly value={value} />
             <div className="flex flex-col items-center justify-center">
                 <button type="button" onClick={arrowUp} aria-label={`Increment ${name}`} className="w-4.5 h-3 flex items-center justify-center cursor-pointer">
                     <IconArrowUp />
