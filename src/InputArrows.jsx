@@ -16,6 +16,7 @@ export const InputArrows = ({ value, onChange, min = 1, max = 60, name }) => {
             <input className="w-12 bg-transparent text-blue-950 cursor-pointer" type="text" name={name} aria-label={name}
                 role="spinbutton" aria-valuenow={value}
                 aria-valuemin={min} aria-valuemax={max}
+                aria-valuetext={`${value} minutes`}
                 readOnly value={value} />
             <div className="flex flex-col items-center justify-center">
                 <button type="button" onClick={arrowUp} aria-label={`Increment ${name}`} className="w-4.5 h-3 flex items-center justify-center cursor-pointer">
