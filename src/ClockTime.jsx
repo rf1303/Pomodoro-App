@@ -67,7 +67,9 @@ function ClockTime() {
                 </div>
             </div>
             <div>
-                <button type="button" className='' onClick={handleSettingOptions}><img src={iconSetting} alt="icon of Setting" className="w-7 h-7 cursor-pointer" /></button>
+                <button type="button" onClick={handleSettingOptions} aria-label="Open settings">
+                    <img src={iconSetting} alt="Setting" aria-hidden="true" className="w-7 h-7 cursor-pointer" />
+                </button>
                 {isSettingOption && <SettingsOptions onClose={() => setIsSettingOption(false)} />}
             </div>
         </div>

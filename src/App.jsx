@@ -6,8 +6,10 @@ function App() {
 
     return (
         <SetOptions>
-            <HeaderOptions />
-            <ClockTime />
+            <main className="grid items-center justify-items-center gap-12 mt-8 md:mt-20 xl:mt-12 md:gap-27 xl:gap-9">
+                <HeaderOptions />
+                <ClockTime />
+            </main>
         </SetOptions>
     );
 }

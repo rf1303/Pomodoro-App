@@ -25,11 +25,16 @@ function SettingsOptions({ onClose }) {
         setIsSettingOption(false);
     }
     return (
-        <div className={`absolute inset-0 bg-blue-850 w-full h-full ${font[activeFont]}`}>
-            <div className="absolute inset-0 m-auto w-clampSetting h-setting-mobile rounded-2xl bg-white  py-4.5 md:py-8 md:h-setting-tablet z-50">
+        <div
+            role="dialog" aria-modal="true" aria-labelledby='settings-title'
+            className={`absolute inset-0 bg-blue-850 w-full h-full ${font[activeFont]}`}>
+            <div className="absolute inset-0 m-auto w-clampSetting h-setting-mobile rounded-2xl bg-white  py-4.5 md:py-8 md:h-setting-tablet z-50" id="settings-title">
                 <header className='flex items-center justify-between  px-6  md:px-9'>
                     <h2 className='text-setting-1'>Settings</h2>
-                    <button type="button" onClick={onClose} className='cursor-pointer'>{<IconClose />}</button>
+                    <button type="button" onClick={onClose}
+                        className='cursor-pointer'  aria-label="Close settings">
+                        {<IconClose />}
+                    </button>
                 </header>
                 <div className="w-full h-0.5 bg-grey-400 my-4"></div>
                 <form className='grid items-center justify-items-center gap-6 px-6  md:px-9' onSubmit={handleSubmit}>
@@ -68,11 +73,12 @@ function SettingsOptions({ onClose }) {
                         <h3 className="settings__title">color</h3>
                         <div className="flex items-center justify-center gap-4">
                             {Object.keys(colorNames).map((clr) => (
-                                <button key={clr} type="button" className={`w-10 h-10 rounded-full cursor-pointer
-                               ${colorNames[clr].bg} flex items-center justify-center `}
-                                    onClick={() => setColor(clr)}>{color === clr
-                                        ? <IconCheck />
-                                        : ''}</button>
+                                <button key={clr} type="button" 
+                                    aria-label={`Select ${clr} color`} aria-pressed={color === clr}
+                                    className={`w-10 h-10 rounded-full cursor-pointer ${colorNames[clr].bg} 
+                                         flex items-center justify-center `} onClick={() => setColor(clr)}>
+                                    {color === clr ? <IconCheck />
+                                                   : ''}</button>
                             ))}
                         </div>
                     </div>
